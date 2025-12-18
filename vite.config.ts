@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
-        allowedHosts: 'all',
+         allowedHosts: ['task-flow-z6x0.onrender.com']
       },
       plugins: [react()],
       define: {
