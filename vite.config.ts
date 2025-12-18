@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
          allowedHosts: ['task-flow-z6x0.onrender.com']
       },
       plugins: [react()],
+       base: '/',
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
