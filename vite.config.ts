@@ -8,13 +8,19 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
-         allowedHosts: ['task-flow-z6x0.onrender.com']
+        allowedHosts: ['task-flow-z6x0.onrender.com']
       },
+      base: '/',
       plugins: [react()],
-       base: '/',
-      define: {
+      _define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'import.meta.env.VITE_GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      },
+      get define() {
+        return this._define;
+      },
+      set define(value) {
+        this._define = value;
       },
       resolve: {
         alias: {
